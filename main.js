@@ -6,6 +6,7 @@ import {
   getIndustryAverageSalary,
   getAverageSalaryByCompany,
 } from "./files/modules/workAroundModule.js";
+import formatNumbers from './files/modules/utilities.js'
 // TODO: Get the companies and roles using the salaryData module.
 const companies = getCompanies();
 const roles = getRoles();
@@ -62,10 +63,10 @@ function updateResults() {
   }
 
   // TODO: Use the workAroundModule functions to calculate the needed data.
-  const averageSalaryByRole = getAverageSalaryByRole(role);
-  const averageSalaryByCompany = getAverageSalaryByCompany(company);
-  const salary = getSalaryAtCompany(role, company);
-  const industryAverageSalary = getIndustryAverageSalary();
+  const averageSalaryByRole = formatNumbers(getAverageSalaryByRole(role));
+  const averageSalaryByCompany = formatNumbers(getAverageSalaryByCompany(company));
+  const salary = formatNumbers(getSalaryAtCompany(role, company));
+  const industryAverageSalary = formatNumbers(getIndustryAverageSalary());
 
   // Render them to the screen.
   document.getElementById(
