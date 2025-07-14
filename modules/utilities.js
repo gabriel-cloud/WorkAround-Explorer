@@ -10,7 +10,7 @@ const formatNumbers = (number) => {
   if (decimal[1] == true) {
     return newNum + "." + decimal[1];
   } else {
-    return number;
+    return newNum;
   }
 };
 
